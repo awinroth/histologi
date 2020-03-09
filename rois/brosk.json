@@ -1,0 +1,28 @@
+{
+    "name": "Brosk",
+    "description": "Elastiskt brosk från epiglottis, elastinfärgat. Den principiella uppbyggnaden skiljer sig inte från det hyalina broskets. Med elastininfärgning framsträder dock elastiska trådar i intercellularsubstansen. den andra skillnaden är att proportionen celler/intercellularsubstans är större, cellerna ligger tätare än i det hyalina brosket. Utanför brosket finns gulfärgad lucjer bindväv som bitvis innehåller rikligt med brunviolett färgade elastiska fibrer. I bindväven finns också blodkärl och blandade körtlar.",
+    "rois": [
+        {
+            "type": "box",
+            "x1": 5670,
+            "y1": 6100,
+            "x2": 7000,
+            "y2": 7300,
+            "text": "Bindväv"
+        },
+        {
+            "type": "arrow",
+            "x":    5583,
+            "y":    9050,
+            "text": "Lakun av broskceller"
+        },
+        {
+            "type": "line",
+            "x1": 10541,
+            "y1": 15280,
+            "x2": 10541,
+            "y2": 20600,
+            "text": "Broskceller"
+        }
+    ]
+}

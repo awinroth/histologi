@@ -1,0 +1,120 @@
+
+ul{
+  list-style-type: none;
+  columns: 4;
+}
+
+ul li{
+  padding: 7px;
+}
+
+ul li:hover{
+  color: #818181
+}
+
+.main{
+  width: 100%;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  width: 100%
+}
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+
+.dropbtn {
+  font-size: 16px; 
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: whitesmoke;
+  width: 99%;
+  z-index: 60;
+  overflow: hidden;
+
+}
+
+#DFM1:hover .dropdown-content{
+  display: block;
+  overflow: hidden;
+}
+
+#DFM1:hover {
+  background: #818181;
+}
+  
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+  
+.openseadragon{
+  float: left;
+  width: 60%;
+  height: 90%;
+  padding-top: 10;
+  padding-right: 15;
+}
+.openseadragon-container :focus { outline: none; }
+
+
+  .positions{
+    float: left;
+    width: 30%;
+    padding-top: 10;
+  }
+
+  .highlight{
+    position: absolute;
+    opacity:    1;
+    outline:    3px solid #0A7EbE;
+    border: #818181;
+  }
+
+  .highlight:hover{
+    background-color: rgba(255, 255, 255, 0.4)
+  }
+
+  .popup {
+    width: 150px;
+    padding: 20px;
+    font-size: 12pt;
+    background-color: lightcyan;
+    z-index: 30;
+    position: absolute;
+    display: none;
+    pointer-events: none;
+    opacity: 0.8;
+  }
+
+  #arrowdiv {
+    z-index: 20;
+  }
+  .arrow{
+    z-index: 20;
+  }
+  .tick{
+    z-index: 21;
+    pointer-events: none;
+  }
+
+  #description{
+    padding-top: 100px;
+    padding-right: 70px;
+    line-height: 30px
+  }

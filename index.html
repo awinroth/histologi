@@ -1,0 +1,150 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+
+    <script src="/openseadragon.min.js"></script>
+    <script src="osd_svg_1.js"></script>
+    <script src="rois.js"></script>
+</head>
+
+<body>
+    
+
+   <!-- <div class="sidebar">
+
+        <ul>
+            <li onclick="changeImage('x.dzi', 'brosk.json')">Brosk</li>
+            <li onclick="changeImage('y.dzi', 'trachea.json')">Trachea/<br/>Esofagus</li>
+            
+        </ul>
+    </div> 
+ -->
+ <div class="main">
+
+<div class="navbar">
+    <div class="dropdown" id="DFM1">
+    <button class="dropbtn">DFM1</button>
+    <div class="dropdown-content">
+    
+        <ul>
+            <li onclick="changeImage('x.dzi', 'brosk.json')">Brosk</li>
+            <!--<li onclick="changeImage('y.dzi', 'trachea.json')">Trachea/<br/>Esofagus</li> -->
+            <li >Lorem, ipsum.</li>
+            <li >Lorem, ipsum.</li>
+            <li >Lorem, ipsum.</li>
+            <li >Lorem, ipsum.</li>
+            <li >Lorem, ipsum.</li>
+            <li >Lorem, ipsum.</li>
+            <li >Lorem, ipsum.</li>
+            <li >Lorem, ipsum.</li>
+            <li >Lorem, ipsum.</li>
+            <li >Lorem, ipsum.</li>
+            <li >Lorem, ipsum.</li>
+            <li >Lorem, ipsum.</li>
+            <li >Lorem, ipsum.</li>
+            <li >Lorem, ipsum.</li>
+            <li >Lorem, ipsum.</li>
+            <li >Lorem, ipsum.</li>
+            <li >Lorem, ipsum.</li>
+<li >Lorem, ipsum.</li>
+<li >Lorem, ipsum.</li>
+<li >Lorem, ipsum.</li>
+<li >Lorem, ipsum.</li>
+<li >Lorem, ipsum.</li>
+<li >Lorem, ipsum.</li>
+<li >Lorem, ipsum.</li>
+<li >Lorem, ipsum.</li>
+<li >Lorem, ipsum.</li>
+<li >Lorem, ipsum.</li>
+<li >Lorem, ipsum.</li>
+<li >Lorem, ipsum.</li>
+<li >Lorem, ipsum.</li>
+<li >Lorem, ipsum.</li>
+<li >Lorem, ipsum.</li>
+<li >Lorem, ipsum.</li>
+
+
+            
+        </ul>
+     
+      
+    </div>
+    </div>
+
+    <button class="dropbtn" id="DFM2button">DFM2</button>
+    <button class="dropbtn" id="OSOFbutton">OSOF</button>
+
+</div>
+ 
+
+      
+
+<div id="contentDiv" class="openseadragon">
+    <div id="annotations"></div>
+    <div id="arrowdiv""></div>
+    <div id="tickdiv"></div>
+</div>
+<div id="description"></div>
+
+<div id="positions"></div>
+
+
+</div>  
+
+        
+            <script type="text/javascript">
+                // Example
+                var currentroi;
+               var viewer = OpenSeadragon({
+                id:              "contentDiv",
+                prefixUrl:       "/openseadragon-bin-2.4.0/images/",
+                gestureSettingsMouse: { dblClickToZoom: true, clickToZoom: false },
+                maxZoomLevel:   30,
+                //tileSources:     "/dzis/x.dzi",
+                });
+
+                overlay = viewer.svgOverlay();
+                viewer.addHandler('open', function() {
+                fetchRois('/rois/' + currentroi);
+
+             });
+               
+
+               
+
+               
+
+            var tracker = new OpenSeadragon.MouseTracker({
+            element: viewer.container,
+            moveHandler: function(event) {
+                var positions = document.getElementById('positions');
+                var webPoint = event.position;
+                
+                var viewportPoint = viewer.viewport.pointFromPixel(webPoint);
+                var imagePoint = viewer.viewport.viewportToImageCoordinates(viewportPoint);
+            
+
+                positions.innerHTML = 'Web:<br>' + webPoint.toString() + 
+                    '<br><br>Viewport:<br>' + viewportPoint.toString() +
+                    '<br><br>Image:<br>' + imagePoint.toString();
+                
+    
+            }
+            
+        });  
+
+        
+        tracker.setTracking(true);  
+        changeImage('x.dzi', 'brosk.json')
+            </script>
+
+            
+
+
+
+</body>
+</html>
+

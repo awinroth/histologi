@@ -1,0 +1,68 @@
+{
+    "name": "Trachea",
+    "description": "Innerst ses ett skiktat, oförhornat skivepitel vars ytligaste celler har en ljust blågrå färgnyans, medan de djupare delarna, stratum spinosum, är röda. I de ytligaste skikten av epitelet ses små rödfärgade celler med långa utskott och troligen är dessa antigenpresenterande dendritceller, s.k. Langerhans celler. Längre ner i epitelet ses insprängda lymfocyter. Båda dessa celltyper är involverade i det immunologiska försvaret. Utanför epitelet ligger det blåfärgade lamina propria. Gränsen mellan epitel och bindväv är mycket ojämn eftersom lamina propria skjuter upp i epitelet med långa papiller. Utanför ligger det tvärsnittade gråa lamina muscularis mucosae. Fiberdiametern varierar eftersom cellerna är spolformade. Endast i de celler som snittats i mitten ses cellkärnan. Den blåfärgade tela submucosa innehåller kollagena trådar, blodkärl, några fettceller och enstaka nervceller, Meissners plexus. Tunica muscularis innehåller i detta preparat såväl glatt muskulatur som tvärstrimmig muskulatur i både det inre cirkulära och det yttre längsgående lagret. Det tyder på att det är den mittre delen av esophagus som ses. Färgningen är ojämn i muskulaturen, ibland röd ibland blå. I fettväven ligger spridda thymusrester.",
+    "rois": [
+        {
+            "type": "line",
+            "x1": 26600,
+            "y1": 6700,
+            "x2": 26600,
+            "y2": 25800,
+            "text": "Trachea"
+        },
+        {
+            "type": "line",
+            "x1": 12030,
+            "y1": 25425,
+            "x2": 12030,
+            "y2": 26050,
+            "text": "Skivepitel"
+        },
+        {
+            "type": "line",
+            "x1": 12030,
+            "y1": 26050,
+            "x2": 12030,
+            "y2": 26350,
+            "text": "Proliferation av epitelceller"
+        },
+        {
+            "type": "line",
+            "x1": 12030,
+            "y1": 26350,
+            "x2": 12030,
+            "y2": 26632,
+            "text": "Lamina Propira"
+        },
+        {
+            "type": "line",
+            "x1": 12030,
+            "y1": 26632,
+            "x2": 12030,
+            "y2": 27100,
+            "text": "Bindväv"
+        },
+        {
+            "type": "line",
+            "x1": 12030,
+            "y1": 27100,
+            "x2": 12030,
+            "y2": 28083,
+            "text": "Cirkulär muskulatur"
+        },
+        {
+            "type": "line",
+            "x1": 12030,
+            "y1": 28083,
+            "x2": 12030,
+            "y2": 28932,
+            "text": "Längsgående muskulatur"
+        },
+        {
+            "type": "arrow",
+            "x": 10968,
+            "y": 25216,
+            "text": "Langerhans cell"
+        }
+    ]
+}
