@@ -194,5 +194,5 @@ function changeImage(name, rois) {
     while(overlay.node().firstChild){ overlay.node().removeChild(overlay.node().firstChild)}
     viewer.clearOverlays();
     currentroi = rois;
-    viewer.open("/dzis/" + name)
+    viewer.open("dzis/" + name)
 }
