@@ -1,19 +1,26 @@
 
 
 function createLine(viewer,overlay, data) {
-    console.log(data);
+    //console.log(data);
     var svgNS = 'http://www.w3.org/2000/svg';
 
     var p1 = viewer.viewport.imageToViewportCoordinates(data.x1, data.y1);
     var p2 = viewer.viewport.imageToViewportCoordinates(data.x2, data.y2);
     var line = document.createElementNS(svgNS, 'line');
-
+    
     line.setAttribute('x1', p1.x);
     line.setAttribute('x2', p2.x);
     line.setAttribute('y1', p1.y);
     line.setAttribute('y2', p2.y);
+    //line.setAttribute('vector-effect', 'non-scaling-stroke');
+    line.setAttribute('stroke', 'rgb(0,0,0)');
+    line.setAttribute('pointer-events', 'all');
+    //line.setAttribute('stroke-width', '10');
+    
 
-    w = 7
+    
+
+    w = 7000
     s1_x = 15 - w*(p2.y - p1.y)/(Math.sqrt(p2.x - p1.x)**2 + (p2.y - p1.y)**2)
     s1_y = 15 + w*(p2.x - p1.x)/(Math.sqrt(p2.x - p1.x)**2 + (p2.y - p1.y)**2)
 
@@ -45,8 +52,8 @@ function createLine(viewer,overlay, data) {
     line3.setAttribute('stroke', 'rgb(0,0,0)')
     line3.setAttribute('stroke-width', '5')
 
-    console.log(line2)
-    console.log(line2.getAttribute('x1'))
+    //console.log(line2)
+    //console.log(line2.getAttribute('x1'))
 
     createPopup(line, data.text);
 
@@ -100,7 +107,7 @@ function createLine(viewer,overlay, data) {
 
 function createArrow(viewer, data){
     var arrowdiv = document.getElementById('arrowdiv')
-    console.log(data);
+    //console.log(data);
     var arrowimg = document.createElement('img')
     arrowimg.setAttribute('src', "Red_Arrow_Down.svg")
     arrowimg.setAttribute('width', '20')
@@ -117,7 +124,7 @@ function createArrow(viewer, data){
         element: arrowimg,
         clickHandler: (evt) => {
             viewer.viewport.panTo(viewer.viewport.imageToViewportCoordinates(data.x,data.y));
-            viewer.viewport.zoomTo(9)},
+            viewer.viewport.zoomTo(0.01)},
         }).setTracking(true);
 
        createPopup(arrowimg, data.text);
@@ -134,7 +141,11 @@ function createBox(viewer, overlay, data){
     box.setAttribute('y', p1.y);
     box.setAttribute('height', p2.x-p1.x);
     box.setAttribute('width', p2.y-p1.y);
+    box.setAttribute('stroke', 'rgb(0,0,0)');
+    box.setAttribute('pointer-events', 'all');
     box.setAttribute('fill', 'none');
+    //box.setAttribute('vector-effect', 'non-scaling-stroke');
+    //box.setAttribute('stroke-width', '3');
 
     createPopup(box, data.text);
    
@@ -152,7 +163,7 @@ function createPopup(roi, text){
 
 
     function showPopup(evt) {
-        console.log(evt.clientX);
+        //console.log(evt.clientX);
         popupbox.style.left = evt.pageX + 'px';
         popupbox.style.top = evt.pageY + 'px';
         //boxdesc.style.zIndex = 10
@@ -179,7 +190,7 @@ function fetchRois(url){
                     createBox(viewer,overlay,element);
                     break;
                 case "arrow":
-                    console.log(element);
+                    //console.log(element);
                     createArrow(viewer,element);
                     break;
                 case "line":
@@ -194,5 +205,5 @@ function changeImage(name, rois) {
     while(overlay.node().firstChild){ overlay.node().removeChild(overlay.node().firstChild)}
     viewer.clearOverlays();
     currentroi = rois;
-    viewer.open("dzis/" + name)
+    viewer.open([{width: 1000, tileSource: name}]);
 }

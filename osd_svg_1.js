@@ -37,13 +37,10 @@
         this._svg.style.top = 0;
         this._svg.style.width = '100%';
         this._svg.style.height = '100%';
+        this._svg.style.overflow = 'hidden';
         this._viewer.canvas.appendChild(this._svg);
 
         this._node = document.createElementNS(svgNS, 'g');
-        this._node.setAttribute('stroke', 'rgb(0,0,0)');
-        this._node.setAttribute('stroke-width', '0.005');
-        this._node.setAttribute('pointer-events', 'all');
-       
 
         
 
@@ -97,7 +94,7 @@
 
                 this._node.setAttribute('stroke-width', 5/scale);
 
-            console.log(scale);
+            //console.log(scale);
         },
 
         // ----------

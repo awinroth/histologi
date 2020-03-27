@@ -102,13 +102,14 @@
                 id:              "contentDiv",
                 prefixUrl:       "images/",
                 gestureSettingsMouse: { dblClickToZoom: true, clickToZoom: false },
-                maxZoomLevel:   30,
-                //tileSources:     "dzis/x.dzi",
+                maxZoomLevel:   0.001,
+                minZoomLevel: 0,
+                //tileSources:    [{width: 10000, tileSource: "dzis/x.dzi"}] ,
                 });
 
                 overlay = viewer.svgOverlay();
                 viewer.addHandler('open', function() {
-                fetchRois('rois/' + currentroi);
+                fetchRois('rois/brosk.json');
 
              });
                
@@ -138,7 +139,7 @@
 
         
         tracker.setTracking(true);  
-        changeImage('x.dzi', 'brosk.json')
+        changeImage("dzis/x.dzi", 'brosk.json')
             </script>
 
             
